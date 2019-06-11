@@ -1,0 +1,109 @@
+{% extends "base_template.html" %}
+{% block head %}
+  {{ super() }}
+{% endblock %}
+{% block content %}
+<div class="page-header" style="padding-top: 20px;">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h2>Dataset Examples and Downloads</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4">
+        <input ng-model="page" ng-change="changePage()">
+      </div>
+      <div class="col-md-4">
+        <h3 class="md-title">You are currently at page {a page a}</h3>
+      </div>
+      <div class="col-md-4">
+        <md-button ng-click="incPage()">Next Page</md-button>
+      </div>
+    </div>
+    <div class="row">
+      <div ng-cloak>
+        <md-content class="md-padding" layout-xs="column" layout="row">
+          <div flex-xs flex-gt-xs="50" layout="column">
+            <md-card>
+              <img ng-src="{a imagePath1 a}" class="md-card-image" alt="Office">
+
+              <md-card-title>
+                <md-card-title-text>
+                  <span class="md-headline">{a imgNum1 a}</span>
+                </md-card-title-text>
+              </md-card-title>
+              <md-card-content>
+                <p>
+                  The Image depicts a scene of the home office.
+                </p>
+              </md-card-content>
+              <md-card-actions layout="row" layout-align="end center">
+                <md-button ng-click="left1()">Left Half</md-button>
+                <md-button ng-click="right1()">Right Half</md-button>
+              </md-card-actions>
+            </md-card>
+          </div>
+          <!-- Second -->
+          <div flex-xs flex-gt-xs="50" layout="column">
+            <md-card>
+              <img ng-src="{a imagePath2 a}" class="md-card-image" alt="Office">
+
+              <md-card-title>
+                <md-card-title-text>
+                  <span class="md-headline">{a imgNum2 a}</span>
+                </md-card-title-text>
+              </md-card-title>
+              <md-card-content>
+                <p>
+                  The Image depicts a scene of the home office.
+                </p>
+              </md-card-content>
+              <md-card-actions layout="row" layout-align="end center">
+                <md-button ng-click="left2()">Left Half</md-button>
+                <md-button ng-click="right2()">Right Half</md-button>
+              </md-card-actions>
+            </md-card>
+          </div>
+        </md-content>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block script_custom %}
+<script>
+  var app = angular.module('halfApp', ['ngMaterial', 'ngMessages']);
+  app.config(['$interpolateProvider', function($interpolateProvider) {
+    $interpolateProvider.startSymbol('{a');
+    $interpolateProvider.endSymbol('a}');
+  }]);
+
+  app.controller('AppCtrl', function($scope) {
+    var base = 9314;
+    if ($scope.page === undefined){
+      $scope.page = 0;
+    }
+
+    $scope.imgNum1 = base+2*parseInt($scope.page);
+    $scope.imgNum2 = base+2*parseInt($scope.page)+1;
+    $scope.imagePath1 = '/static/dataset/ADE_train_0000' + (base+$scope.page) + '.jpg';
+    $scope.imagePath2 = '/static/dataset/ADE_train_0000' + (base+$scope.page+1) + '.jpg';
+    $scope.changePage = function() {
+      $scope.imgNum1 = base+2*parseInt($scope.page);
+      $scope.imgNum2 = base+2*parseInt($scope.page)+1;
+      $scope.imagePath1 = '/static/dataset/ADE_train_0000' + $scope.imgNum1 + '.jpg';
+      $scope.imagePath2 = '/static/dataset/ADE_train_0000' + $scope.imgNum2 + '.jpg';
+    }
+    $scope.incPage = function() {
+      $scope.page += 1;
+      $scope.imgNum1 = base+2*parseInt($scope.page);
+      $scope.imgNum2 = base+2*parseInt($scope.page)+1;
+      $scope.imagePath1 = '/static/dataset/ADE_train_0000' + $scope.imgNum1 + '.jpg';
+      $scope.imagePath2 = '/static/dataset/ADE_train_0000' + $scope.imgNum2 + '.jpg';
+    }
+
+  });
+</script>
+{% endblock %}

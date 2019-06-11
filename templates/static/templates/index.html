@@ -1,0 +1,136 @@
+{% extends "base_template.html" %}
+{% block content %}
+<div class="page-header" style="padding-top: 20px;">
+  <!-- Actual page content comes here -->
+  <div class="container" style="margin-top:45px;">
+
+    <div id="intro" style="padding-top: 20px;">
+      <div class="row text-center">
+
+
+        <div class="col-md-12 ml-auto">
+          <h1>
+            <font style="font-size:40px; ">HALF&ampHALF</font>
+          </h1>
+          <font face=helvetica style="font-size:20px;color:#707070">New Tasks and Benchmarks for Studying Visual Common Sense</font>
+        </div>
+      </div>
+    </div>
+    <hr style="margin-top:20px; margin-bottom:13px;">
+
+    <hr style="margin: 0;">
+    <div id="about" style="padding: 60px 0;">
+      <div class="row">
+        <div class="col-md-2">
+          <a href="/static/files/CVPR2016_MovieQA.pdf" target="_blank">
+          </a>
+
+          <a href="/static/files/CVPR2016_MovieQA.pdf"><i class="fa fa-file-text"></i> CVPR 2016</a>
+          <br />
+          <a href="http://arxiv.org/abs/1512.02902" target="_blank"><i class="fa fa-file-text"></i> arXiv</a>
+          <br />
+          <a href="https://github.com/makarandtapaswi/MovieQA_CVPR2016/" target="_blank"><i class="fa fa-github"></i> Code</a>
+          <br />
+          <a href="https://www.youtube.com/watch?v=aO8Tt9GcQak" target="_blank"><i class="fa fa-youtube"></i> Spotlight</a>
+        </div>
+
+        <div class="col-md-7 text-justify" style="line-height:1.42857143;">
+          <h3>About Half&ampHalf</h3>
+          <p>
+            We introduce the Half&ampHalf tasks and datasets which aims to evaluate visual common sense for desigining intelligent agents by
+            The data set consists of almost <strong>15,000 multiple choice question answers</strong> obtained from over <strong>400 movies</strong> and features high semantic diversity.
+          </p>
+
+          <p>
+            Each question comes with a set of five highly plausible answers; only one of which is correct.
+            The questions can be answered using multiple sources of information: movie clips, plots, subtitles, and for a subset scripts and DVS.
+          </p>
+        </div>
+
+        <div class="col-md-3">
+          <h4>Statistics in HnH<small>v1.0</small></h4>
+          <div class="list-group1">
+            <ul class="list-group-item-text">
+              <li>6,900 <b>Person</b>
+              <li>2,800 <b>Dogs</b>
+              <li>1,650 <b>Cats</b>
+              <li>1,600 <b>Cars</b>
+              <li>1,000 <b>Bike</b>
+            </ul>
+          <hr style="margin:2px;">
+
+            <ul class="list-group-item-text">
+              <li>408 <b>Plot synopses</b>:<br />
+                35 sentences/plot<br />
+                20 words in sentence</li>
+              <hr style="margin:2px;">
+
+              <li>408 <b>Subtitles</b>:<br />
+                1500 dialogs/movie</li>
+              <hr style="margin:2px;">
+
+              <li>140 <b>Video-clips + Subtt</b>:<br />
+                covers 6,500 QAs<br />
+                avg. clip duration 200s</li>
+              <hr style="margin:2px;">
+
+              <li>199 <b>Scripts</b>:<br />
+                2800 lines/movie</li>
+              <hr style="margin:2px;">
+
+              <li>60 <b>DVS</b>:<br />
+                640 lines/movie</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <div class="row">
+            <div class="col-md-offset-3 col-md-2">
+                <img src="/static/images/logos/uoft.png" width="100%" style="max-width:250px;"
+                        alt="University of Toronto"/>
+            </div>
+            <div class="col-md-2">
+                <img src="/static/images/logos/kit.jpg" width="60%" style="max-width:200px; padding-top:15px;"
+                        alt="Karlsruhe Institute of Technology"/>
+            </div>
+            <div class="col-md-2">
+                <img src="/static/images/logos/mit.png" width="100%" style="max-width:250px; padding-top:15px;"
+                        alt="Massachusetts Institute of Technology"/>
+            </div>
+        </div> -->
+</div>
+
+
+<!-- <div style="padding-top: 20px;"> </div>
+  <h2><font face=helvetica style="font-size:24px;" >About Half&amp Half</font></h2>
+  <font face=helvetica style=font-size:15px>
+
+
+  <p style="padding-bottom:10px"></p>
+
+
+  <h2><font face=helvetica style=font-size:24px>Tasks</font></h2>
+  <hr style="margin-top:-10px; margin-bottom:23px;">
+  <font face=helvetica style=font-size:15px>
+
+  <h4>Task 1: Image-to-Label</h4>
+  <div>
+  <img src="/static/images/i2l_task.png" height="50%" width="50%" style="padding-top: 10px" >
+  </div>
+
+
+  <h4>Task 2: Image-to-Image</h4>
+  <div>
+  <img src="/static/images/i2i_task.png" height="50%" width="50%" style="padding-top: 10px" >
+  </div>
+
+  <h4>Task 2: Label-to-Image</h4>
+  <div>
+  <img src="/static/images/l2i_task.png" height="50%" width="50%" style="padding-top: 10px" >
+  </div> -->
+{% endblock %}

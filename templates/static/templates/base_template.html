@@ -1,0 +1,127 @@
+<!doctype html>
+<html>
+
+<head>
+  {% block head %}
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Trial Webpage for Half&Half Benchmark">
+  <title>Half&ampHalf Benchmark (Beta)</title>
+  <!-- Modified Bootstrap -->
+  <!-- <link href="/static/css/mod-bootstrap.css" rel="stylesheet"> -->
+  <!-- Fonts -->
+  <link href="/static/css/docs.css" rel="stylesheet">
+  <!-- <link href="/static/css/font.css" rel="stylesheet"> -->
+  <!-- Custom CSS -->
+  <link href="/static/css/additional.css" rel="stylesheet">
+  <!-- Bootstrap -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font-Awesome -->
+  <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <!-- DataTables -->
+  <link href="https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css" rel="stylesheet">
+  <!-- Icon for hnh -->
+  <link rel="shortcut icon" href="/static/images/hnh_icon.png">
+  
+  {% block head_custom %}
+  {% endblock %}
+
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+  <!-- List searching, sorting, etc. -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.3.0/list.min.js"></script>
+  <!-- Global Custom JS -->
+  <script src="/static/js/global_custom.js"></script>
+  <!-- Awesome sorted, searchable tables -->
+  <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js"></script>
+  <!-- D3.js for visualization -->
+  <script src="https://d3js.org/d3.v3.min.js"></script>
+  <!-- Bootstrap -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <!-- Babel JSX Support -->
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  {% endblock %}
+</head>
+
+<body>
+  <!-- Navigation bar -->
+  <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #6b1010;">
+    <a class="navbar-brand" href="/">Half&ampHalf Benchmark</a>
+    <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="{{ url_for('home.index') }}">OVERVIEW <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url_for('home.dataset') }}">DATASET</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            EXPLORE
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="{{ url_for('home.visualization_i2i') }}"><b> IMAGE-TO-IMAGE</b></a>
+            <a class="dropdown-item" href="{{ url_for('home.visualization_i2l') }}"><b> IMAGE-TO-LABEL</b></a>
+            <a class="dropdown-item" href="{{ url_for('home.visualization_l2i') }}"><b> LABEL-TO-IMAGE</b></a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url_for('home.people') }}">PEOPLE</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div id="content" ng-app="halfApp" ng-controller="AppCtrl">
+    {% block content %}{% endblock %}
+  </div>
+  {% block footer %}
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <div>
+            &copy;
+            <span id="copyright">
+              <script>
+                document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))
+              </script>
+            </span>
+            intelligent search research group
+          </div>
+        </div>
+        <div class="col-md-4">
+
+        </div>
+        <div class="col-md-4">
+          <ul class="list-inline quicklinks">
+            <li class="list-inline-item">
+              Powered by Professor Erik
+            </li>
+            <li class="list-inline-item">
+              <a href="#">Terms of Use</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+  {% endblock %}
+
+  <!-- Scripts added below to improve responsiveness -->
+  <!-- Load React. -->
+  <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+  <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+
+  <!-- Create React Module -->
+  {% block script_custom %}{% endblock %}
+
+
+</body>
+
+</html>

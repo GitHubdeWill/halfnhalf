@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Trial Webpage for Half&Half Benchmark">
+    <meta name="author" content="Ashish Singh">
+    <title>Half&ampHalf Benchmark (Beta) </title>
+    <!-- styles -->
+    <link href="/static/css/fonts.css" rel="stylesheet">
+    <!-- Modified Bootstrap -->
+    <link href="/static/css/mod-bootstrap.css" rel="stylesheet">
+    <!-- Fonts -->
+    <link href="/static/css/docs.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="/static/css/additional.css" rel="stylesheet">
+    <!-- Font-Awesome -->
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- DataTables -->
+    <link href="https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css" rel="stylesheet">
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous"> -->
+    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}"> -->
+    <link rel="shortcut icon" href="/static/images/hnh_icon.png">
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- List searching, sorting, etc. -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.3.0/list.min.js"></script>
+    <!-- Custom JS -->
+    <script src="/static/js/custom.js"></script>
+    <!-- Awesome sorted, searchable tables -->
+    <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js"></script>
+    <!-- D3.js -->
+    <script src="https://d3js.org/d3.v3.min.js"></script>
+
+    <!-- Google Analytics -->
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-71055127-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+    <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script> -->
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+
+    </head>
+
+  <body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" style="background-color: #6b1010;">
+        <div class="navbar-header col-md-offset-1">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#collapsable-navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" style="color:#FFFFFF"><b>Half&ampHalf Benchmark</b></a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="collapsable-navbar">
+            <ul class="nav navbar-nav navbar-left">
+                <li><a href="{{ url_for('home.index') }}"><i class="fa fa-photo"></i><b> OVERVIEW</b></a></li>
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-tasks"></i><b> EXPLORE</b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{{ url_for('visualization.index') }}"><i class="fa fa-object-group"></i><b> IMAGE-TO-IMAGE</b></a></li>
+                        <li><a href="{{ url_for('visualization.index') }}"><i class="fa fa-file-image-o"></i><b> IMAGE-TO-LABEL</b></a></li>
+                        <li><a href="{{ url_for('visualization.index') }}"><i class="fa fa-file-word-o"></i><b> LABEL-TO-IMAGE</b></a></li>
+                    </ul>
+                </li>
+
+                <li><a href="{{ url_for('dataset.index') }}"><i class="fa fa-download"></i><b> DOWNLOAD</b></a></li>
+
+                <li><a href="{{ url_for('people.index') }}"><i class="fa fa-user"></i><b> PEOPLE</b></a></li>
+
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Used in the home page for placing full back carousel -->
+
+    <div class="page-header" style="padding-top: 20px;">
+    <h2>Future site for benchmark visualizations</h2>
+    </div>
+
+
+    <!-- scripts -->
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  </body>
+</html>
